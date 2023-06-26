@@ -1,0 +1,16 @@
+- name: set timezone to Moscow
+  timezone:
+    name: Europe/Moscow
+
+- name: add local repo address
+  ansible.builtin.lineinfile:
+    path: /etc/hosts
+    line: 10.0.2.2 repo.local
+
+- name: Copy local repo file
+  ansible.builtin.copy:
+    src: local.repo
+    dest: /etc/yum.repos.d/
+    owner: root
+    group: root
+    mode: '0644'

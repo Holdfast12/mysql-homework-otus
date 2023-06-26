@@ -1,1 +1,7 @@
-# mysql-homework-otus
+Развернуть базу на мастере и настроить так, чтобы реплицировались таблицы:
+| bookmaker |
+| competition |
+| market |
+| odds |
+| outcome |
+

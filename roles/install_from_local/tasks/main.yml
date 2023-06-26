@@ -1,0 +1,10 @@
+- name: Install packages with non-local repos disabled
+  ansible.builtin.dnf:
+    name:
+    - glibc-langpack-ru
+    - Percona-Server-server-57
+    disablerepo: "appstream,baseos,extras"
+    enablerepo: "local"
+    disable_gpg_check: true
+    update_cache: yes
+    install_weak_deps: false

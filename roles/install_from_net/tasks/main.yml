@@ -1,0 +1,18 @@
+- name: install percona repo
+  ansible.builtin.dnf:
+    name:
+    - https://repo.percona.com/yum/percona-release-latest.noarch.rpm
+    state: latest
+    disable_gpg_check: true
+    update_cache: yes
+    install_weak_deps: false
+
+- name: install packages
+  ansible.builtin.dnf:
+    name:
+    - glibc-langpack-ru
+    - Percona-Server-server-57
+    state: latest
+    disable_gpg_check: true
+    update_cache: yes
+    install_weak_deps: false

@@ -1,0 +1,8 @@
+---
+- hosts: all
+  become: true
+  roles:
+    - common
+    - install_from_local
+    #- mysql_settings
+...

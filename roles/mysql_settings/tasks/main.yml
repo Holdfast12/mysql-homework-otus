@@ -1,0 +1,15 @@
+- name: copy config files
+  ansible.builtin.copy:
+    src: '{{ item }}'
+    dest: "/etc/my.cnf.d/"
+    owner: root
+    group: root
+    mode: '0644'
+  with_fileglob:
+    - "./*"
+
+- name: enable and start mysql
+  service:
+    name: mysql
+    state: restarted
+    enabled: yes
