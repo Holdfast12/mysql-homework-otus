@@ -3,7 +3,7 @@
 
 MACHINES = {
   :master => '192.168.56.150',
-  :slave => '192.168.56.151'
+  #:slave => '192.168.56.151'
 }
 
 Vagrant.configure(2) do |config|

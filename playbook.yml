@@ -4,5 +4,5 @@
   roles:
     - common
     - install_from_local
-    #- mysql_settings
+    - mysql_settings
 ...

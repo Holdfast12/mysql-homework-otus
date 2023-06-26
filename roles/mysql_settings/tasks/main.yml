@@ -7,9 +7,11 @@
     mode: '0644'
   with_fileglob:
     - "./*"
+  notify:
+    - restart mysql
 
-- name: enable and start mysql
+- name: start mysql
   service:
     name: mysql
-    state: restarted
+    state: started
     enabled: yes
