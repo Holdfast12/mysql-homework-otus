@@ -1,12 +1,32 @@
+- name: template 01-base.cnf
+  template: 
+    src: 01-base.cnf.j2
+    dest: /etc/my.cnf.d/01-base.cnf
+    owner: root 
+    group: root
+    mode: 0644
+  notify:
+    - restart mysql
+
+- name: template 05-binlog.cnf
+  template: 
+    src: 05-binlog.cnf.j2
+    dest: /etc/my.cnf.d/05-binlog.cnf
+    owner: root 
+    group: root
+    mode: 0644
+  notify:
+    - restart mysql
+
 - name: copy config files
   ansible.builtin.copy:
     src: '{{ item }}'
     dest: "/etc/my.cnf.d/"
     owner: root
     group: root
-    mode: '0644'
+    mode: 0644
   with_fileglob:
-    - "./*"
+    - "./*.cnf"
   notify:
     - restart mysql
 
