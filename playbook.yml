@@ -3,6 +3,6 @@
   become: true
   roles:
     - common
-    - install_from_local
+    - install_from_net
     - mysql_settings
 ...
